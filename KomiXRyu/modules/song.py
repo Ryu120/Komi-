@@ -1,7 +1,7 @@
 import asyncio, time, os, asyncio, json
 from telethon.tl.types import DocumentAttributeAudio
-from zeldris.events import register
-from zeldris.utlis import progress
+from KomiXRyu.events import register
+from KomiXRyu.utlis import progress
 from youtube_dl import YoutubeDL
 from youtube_dl.utils import (DownloadError, ContentTooShortError,
 
