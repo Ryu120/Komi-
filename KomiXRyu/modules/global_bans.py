@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 from io import BytesIO
@@ -23,8 +7,8 @@ from telegram.error import BadRequest, TelegramError
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import zeldris.modules.sql.global_bans_sql as sql
-from zeldris import (
+import KomiXRyu.modules.sql.global_bans_sql as sql
+from KomiXRyu import (
     dispatcher,
     OWNER_ID,
     DEV_USERS,
@@ -35,11 +19,11 @@ from zeldris import (
     MESSAGE_DUMP,
     spamwtc,
 )
-from zeldris.modules.helper_funcs.alternate import typing_action, send_action
-from zeldris.modules.helper_funcs.chat_status import user_admin, is_user_admin
-from zeldris.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from zeldris.modules.helper_funcs.filters import CustomFilters
-from zeldris.modules.sql.users_sql import get_all_chats
+from KomiXRyu.modules.helper_funcs.alternate import typing_action, send_action
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin, is_user_admin
+from KomiXRyu.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu.modules.sql.users_sql import get_all_chats
 
 GBAN_ENFORCE_GROUP = 6
 
@@ -96,30 +80,30 @@ def gban(update, context):
         return
 
     if user_id == OWNER_ID:
-        message.reply_text("Nice try -_- but I'm never gonna gban him.")
+        message.reply_text("Nice try, He is my Darling I'm never gonna gban him.")
         return
 
     if int(user_id) in DEV_USERS:
         message.reply_text(
-            "I spy, with my little eye... a war of Villains! Why are you guys turning on each other?"
+            "How can I Gban My Sensei? "
         )
         return
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "I spy, with my little eye... a war of Murderers! Why are you guys turning on each other?"
+            "This person is my Best Friend!!"
         )
         return
 
     if int(user_id) in SUPPORT_USERS:
         message.reply_text(
-            "OOOH someone's trying to gban a dragon! *grabs popcorn*"
+            "OOOH someone's trying to gban a Senpai! *grabs popcorn*"
         )
         return
 
     if int(user_id) in WHITELIST_USERS:
         message.reply_text(
-            "OOOH someone's trying to gban a Assassin! *grabs popcorn*"
+            "OOOH someone's trying to gban my Friend!"
         )
         return
 
@@ -132,7 +116,7 @@ def gban(update, context):
         return
 
     if not reason:
-        message.reply_text("Please Specified a reason. I won't allow a bare gban :)")
+        message.reply_text("Please Specify your reason. I won't allow a bare gban :)")
         return
 
     try:
