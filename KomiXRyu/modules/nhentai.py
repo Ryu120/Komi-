@@ -3,7 +3,7 @@ from telegram import Update, ParseMode, InlineKeyboardButton, InlineKeyboardMark
 from telegram.ext import CommandHandler, CallbackContext
 from telegraph import Telegraph
 
-from zeldris import dispatcher
+from KomiXRyu import dispatcher
 
 def _generate_anchor_tags(tags: list[Tag]) -> str:
     """
