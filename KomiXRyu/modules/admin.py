@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 import os
@@ -23,10 +7,10 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from zeldris import dispatcher, DEV_USERS
-from zeldris.modules.connection import connected
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.admin_rights import (
+from KomiXRyu import dispatcher, DEV_USERS
+from KomiXRyu.modules.connection import connected
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.admin_rights import (
     user_can_pin,
     user_can_promote,
     user_can_changeinfo,
@@ -39,8 +23,8 @@ from zeldris.modules.helper_funcs.chat_status import (
     ADMIN_CACHE,
     can_pin,
 )
-from zeldris.modules.helper_funcs.extraction import extract_user, extract_user_and_text
-from zeldris.modules.log_channel import loggable
+from KomiXRyu.modules.helper_funcs.extraction import extract_user, extract_user_and_text
+from KomiXRyu.modules.log_channel import loggable
 
 
 @bot_admin
@@ -343,8 +327,8 @@ def adminlist(update, _):
         status = admin.status
         name = f"{(mention_html(user.id, user.first_name))}"
         if status == "creator":
-            text += "\n 🦁 Creator:"
-            text += "\n • {} \n\n 🦊 Admin:".format(name)
+            text += "\n ♡ Creator:"
+            text += "\n • {} \n\n ➷ Admin:".format(name)
     for admin in administrators:
         user = admin.user
         status = admin.status
