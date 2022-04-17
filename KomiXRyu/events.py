@@ -1,5 +1,5 @@
 from telethon import events
-from zeldris import client as telethn
+from KomiXRyu import client as telethn
 
 
 def register(**args):
