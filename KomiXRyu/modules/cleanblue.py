@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 
@@ -25,15 +9,15 @@ from telegram.ext import (
     MessageHandler,
 )
 
-from zeldris import ALLOW_EXCL, CustomCommandHandler, dispatcher
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.chat_status import (
+from KomiXRyu import ALLOW_EXCL, CustomCommandHandler, dispatcher
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.chat_status import (
     bot_can_delete,
     connection_status,
     dev_plus,
     user_admin,
 )
-from zeldris.modules.sql import cleanblue_sql as sql
+from KomiXRyu.modules.sql import cleanblue_sql as sql
 
 CMD_STARTERS = ("/", "!") if ALLOW_EXCL else "/"
 BLUE_TEXT_CLEAN_GROUP = 13
