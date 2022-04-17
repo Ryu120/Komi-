@@ -1,7 +1,7 @@
 import sys
 import traceback
 from functools import wraps
-from zeldris import pbot, MESSAGE_DUMP as EVENT_LOGS
+from KomiXRyu import pbot, MESSAGE_DUMP as EVENT_LOGS
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
 
