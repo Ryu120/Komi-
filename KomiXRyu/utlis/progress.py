@@ -2,7 +2,7 @@ import math
 import time
 
 from .exceptions import CancelProcess
-from zeldris.modules.renamer.rehelp import humanbytes, TimeFormatter as time_formatter
+from KomiXRyu.modules.renamer.rehelp import humanbytes, TimeFormatter as time_formatter
 
 
 async def progress(
