@@ -7,10 +7,10 @@ from telegram.ext import Filters, CommandHandler
 from telegram.ext.dispatcher import run_async, CallbackContext
 
 import random
-import zeldris.modules.sql.users_sql as sql
-from zeldris.modules.helper_funcs.filters import CustomFilters
-from zeldris import dispatcher, DEV_USERS, LOGGER
-from zeldris.modules.disable import DisableAbleCommandHandler
+import KomiXRyu.modules.sql.users_sql as sql
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu import dispatcher, DEV_USERS, LOGGER
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
 
 
 
