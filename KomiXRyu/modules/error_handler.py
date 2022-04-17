@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 import io
@@ -26,7 +10,7 @@ import requests
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CallbackContext, CommandHandler
 
-from zeldris import dispatcher, DEV_USERS, MESSAGE_DUMP
+from KomiXRyu import dispatcher, DEV_USERS, MESSAGE_DUMP
 
 pretty_errors.mono()
 
@@ -116,10 +100,10 @@ def error_callback(update: Update, context: CallbackContext):
         url = f"https://www.toptal.com/developers/hastebin/{key}"
         context.bot.send_message(
             MESSAGE_DUMP,
-            text=f"#{context.error.identifier}\n<b>Your enemy's make an error for you, demon king:"
+            text=f"#{context.error.identifier}\n<b>Darling Some Errors:"
             f"</b>\n<code>{e}</code>",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Cursed Errors", url=url)]],
+                [[InlineKeyboardButton("See Errors", url=url)]],
             ),
             parse_mode="html",
         )
