@@ -2,11 +2,11 @@ import html
 import random
 import time
 
-import zeldris.modules.fun_strings as fun_strings
-from zeldris import dispatcher
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.chat_status import is_user_admin
-from zeldris.modules.helper_funcs.extraction import extract_user
+import KomiXRyu.modules.fun_strings as fun_strings
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.chat_status import is_user_admin
+from KomiXRyu.modules.helper_funcs.extraction import extract_user
 from telegram import ChatPermissions, ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext
