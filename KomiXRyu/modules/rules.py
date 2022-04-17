@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from typing import Optional
 
@@ -23,11 +7,11 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters
 from telegram.utils.helpers import escape_markdown
 
-import zeldris.modules.sql.rules_sql as sql
-from zeldris import dispatcher
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.chat_status import user_admin
-from zeldris.modules.helper_funcs.string_handling import markdown_parser
+import KomiXRyu.modules.sql.rules_sql as sql
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin
+from KomiXRyu.modules.helper_funcs.string_handling import markdown_parser
 
 
 @typing_action
