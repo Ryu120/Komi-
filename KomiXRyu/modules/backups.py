@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import json
 import os
@@ -24,22 +8,22 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler
 
-# from zeldris.modules.sql import warns_sql as warnssql
-import zeldris.modules.sql.blacklist_sql as blacklistsql
+# from KomiXRyu.modules.sql import warns_sql as warnssql
+import KomiXRyu.modules.sql.blacklist_sql as blacklistsql
 
-# from zeldris.modules.sql import cust_filters_sql as filtersql
-# import zeldris.modules.sql.welcome_sql as welcsql
-import zeldris.modules.sql.locks_sql as locksql
-import zeldris.modules.sql.notes_sql as sql
+# from KomiXRyu.modules.sql import cust_filters_sql as filtersql
+# import KomiXRyu.modules.sql.welcome_sql as welcsql
+import KomiXRyu.modules.sql.locks_sql as locksql
+import KomiXRyu.modules.sql.notes_sql as sql
 
-# from zeldris.modules.rules import get_rules
-import zeldris.modules.sql.rules_sql as rulessql
-from zeldris import dispatcher, LOGGER, OWNER_ID, MESSAGE_DUMP
-from zeldris.__main__ import DATA_IMPORT
-from zeldris.modules.connection import connected
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.chat_status import user_admin
-from zeldris.modules.sql import disable_sql as disabledsql
+# from KomiXRyu.modules.rules import get_rules
+import KomiXRyu.modules.sql.rules_sql as rulessql
+from KomiXRyu import dispatcher, LOGGER, OWNER_ID, MESSAGE_DUMP
+from KomiXRyu.__main__ import DATA_IMPORT
+from KomiXRyu.modules.connection import connected
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin
+from KomiXRyu.modules.sql import disable_sql as disabledsql
 
 
 @user_admin
