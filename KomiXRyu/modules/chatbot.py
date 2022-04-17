@@ -1,7 +1,7 @@
 
 # Copyright (C) 2021 MoeZilla
 
-# This file is part of Cutiepii (Telegram Bot)
+# This file is part of Komi - San(Telegram Bot)
 
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as
@@ -20,17 +20,17 @@ import json
 import os
 import html
 import requests
-import zeldris.modules.sql.kuki_sql as sql
+import KomiXRyu.modules.sql.kuki_sql as sql
 
 from time import sleep
 from telegram import ParseMode
-from zeldris import dispatcher, updater
-from zeldris.modules.log_channel import loggable
+from KomiXRyu import dispatcher, updater
+from KomiXRyu.modules.log_channel import loggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext, MessageHandler, Filters
-from zeldris.modules.helper_funcs.filters import CustomFilters
-from zeldris.modules.helper_funcs.chat_status import user_admin
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @user_admin
@@ -42,14 +42,14 @@ def add_chat(update: Update, context: CallbackContext):
     is_kuki = sql.is_kuki(chat.id)
     if not is_kuki:
         sql.set_kuki(chat.id)
-        msg.reply_text("Violet AI successfully enabled for this chat!")
+        msg.reply_text("Komi AI successfully enabled for this chat!")
         message = (
             f"<b>{html.escape(chat.title)}:</b>\n"
             f"AI_ENABLED\n"
             f"<b>Admin:</b> {mention_html(user.id, html.escape(user.first_name))}\n"
         )
         return message
-    msg.reply_text("Violet AI is already enabled for this chat!")
+    msg.reply_text("Komi AI is already enabled for this chat!")
     return ""
 
 
@@ -61,10 +61,10 @@ def rem_chat(update: Update, context: CallbackContext):
     user = update.effective_user
     is_kuki = sql.is_kuki(chat.id)
     if not is_kuki:
-        msg.reply_text("Violet AI isn't enabled here in the first place!")
+        msg.reply_text("Komi AI isn't enabled here in the first place!")
         return ""
     sql.rem_kuki(chat.id)
-    msg.reply_text("Violet AI disabled successfully!")
+    msg.reply_text("Komi AI disabled successfully!")
     message = (
         f"<b>{html.escape(chat.title)}:</b>\n"
         f"AI_DISABLED\n"
@@ -107,7 +107,7 @@ def chatbot(update: Update, context: CallbackContext):
 
 def list_all_chats(update: Update, context: CallbackContext):
     chats = sql.get_all_kuki_chats()
-    text = "<b>VOILET AI -Enabled Chats</b>\n"
+    text = "<b>Komi AI -Enabled Chats</b>\n"
     for chat in chats:
         try:
             x = context.bot.get_chat(int(*chat))
@@ -126,8 +126,8 @@ def list_all_chats(update: Update, context: CallbackContext):
 
 
 __help__ = """Admins only:
-   ➢ addchat : Enables Chatbot mode in the chat.
-   ➢ rmchat : Disables Chatbot mode in the chat."""
+   × addchat : Enables Chatbot mode in the chat.
+   × rmchat : Disables Chatbot mode in the chat."""
 
 __mod_name__ = "ChatBot"
 
