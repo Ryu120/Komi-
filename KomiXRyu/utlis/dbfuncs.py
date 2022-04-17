@@ -1,4 +1,4 @@
-from zeldris.mongo import db
+from KomiXRyu.mongo import db
 from typing import Dict, List, Union
 
 coupledb = db.couple
@@ -70,7 +70,7 @@ async def alpha_to_int(user_id_alphabet: str) -> int:
     user_id = int(user_id)
     return user_id
 
-# Couple Chooser
+# shipping
 async def _get_lovers(chat_id: int):
     lovers = await coupledb.find_one({"chat_id": chat_id})
     if not lovers:
