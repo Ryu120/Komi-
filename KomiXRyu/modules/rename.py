@@ -7,9 +7,9 @@ import pyrogram
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 from pyrogram.errors import UserNotParticipant
-from zeldris.modules.renamer.scrimp import scrimp
-from zeldris.modules.renamer.rerewurmk import rename_as_doc, rename_as_video
-from zeldris import pbot
+from KomiXRyu.modules.renamer.scrimp import scrimp
+from KomiXRyu.modules.renamer.rerewurmk import rename_as_doc, rename_as_video
+from KomiXRyu import pbot
 
 
 
