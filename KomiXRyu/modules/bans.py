@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 from typing import Optional
@@ -23,11 +7,11 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 
-from zeldris import dispatcher, LOGGER
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.admin_rights import user_can_ban
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.chat_status import (
+from KomiXRyu import dispatcher, LOGGER
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.admin_rights import user_can_ban
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import (
     bot_admin,
     user_admin,
     is_user_ban_protected,
@@ -36,9 +20,9 @@ from zeldris.modules.helper_funcs.chat_status import (
     is_user_in_chat,
     can_delete,
 )
-from zeldris.modules.helper_funcs.extraction import extract_user_and_text
-from zeldris.modules.helper_funcs.string_handling import extract_time
-from zeldris.modules.log_channel import loggable
+from KomiXRyu.modules.helper_funcs.extraction import extract_user_and_text
+from KomiXRyu.modules.helper_funcs.string_handling import extract_time
+from KomiXRyu.modules.log_channel import loggable
 
 
 @bot_admin
@@ -59,7 +43,7 @@ def ban(update, context):
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("Dude at least refer some user to ban!")
+        message.reply_text("-_- at least refer some user to ban!")
         return ""
 
     try:
@@ -141,7 +125,7 @@ def ban(update, context):
             chat.id,
             excp.message,
         )
-        message.reply_text("Well damn, I can't ban that user.")
+        message.reply_text("Well, I can't ban that user.")
 
     return ""
 
