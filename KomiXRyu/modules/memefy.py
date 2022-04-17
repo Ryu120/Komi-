@@ -2,10 +2,10 @@ import os
 import textwrap
 
 from PIL import Image, ImageDraw, ImageFont
-from zeldris import client as borg
-from zeldris import client as bot
-from zeldris.events import register
-from zeldris import LOGGER
+from KomiXRyu import client as borg
+from KomiXRyu import client as bot
+from KomiXRyu.events import register
+from KomiXRyu import LOGGER
 
 TEMP_DOWNLOAD_DIRECTORY = "./"    
     
