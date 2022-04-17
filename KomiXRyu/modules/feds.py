@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import ast
 import csv
@@ -38,8 +22,8 @@ from telegram.error import BadRequest, TelegramError, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler
 from telegram.utils.helpers import mention_html, mention_markdown
 
-import zeldris.modules.sql.feds_sql as sql
-from zeldris import (
+import KomiXRyu.modules.sql.feds_sql as sql
+from KomiXRyu import (
     dispatcher,
     OWNER_ID,
     DEV_USERS,
@@ -47,19 +31,19 @@ from zeldris import (
     MESSAGE_DUMP,
     LOGGER,
 )
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import (
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import (
     send_message,
     typing_action,
     send_action,
 )
-from zeldris.modules.helper_funcs.chat_status import is_user_admin
-from zeldris.modules.helper_funcs.extraction import (
+from KomiXRyu.modules.helper_funcs.chat_status import is_user_admin
+from KomiXRyu.modules.helper_funcs.extraction import (
     extract_user,
     extract_unt_fedban,
     extract_user_fban,
 )
-from zeldris.modules.helper_funcs.string_handling import markdown_parser
+from KomiXRyu.modules.helper_funcs.string_handling import markdown_parser
 
 # Hello bot owner, I spended for feds many hours of my life, Please don't remove this if you still respect MrYacha
 # and peaktogoo and AyraHikari too Federation by MrYacha 2018-2019 Federation rework by Mizukito Akito 2019
