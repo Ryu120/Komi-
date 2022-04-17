@@ -3,12 +3,12 @@ import traceback
 
 from pyrogram import filters
 from pyrogram.types import ChatPermissions
-from zeldris import OWNER_ID
+from KomiXRyu import OWNER_ID
 import os 
 
 
-from zeldris import DEV_USERS, SUPPORT_USERS
-from zeldris import BOT_ID, pbot as app
+from KomiXRyu import DEV_USERS, SUPPORT_USERS
+from KomiXRyu import BOT_ID, pbot as app
 
 
 
