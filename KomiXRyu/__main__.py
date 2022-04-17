@@ -6,12 +6,12 @@ import time
 import re
 import sys
 import traceback
-import zeldris.modules.sql.users_sql as sql
-# auto deploy hoja 
+import KomiXRyu.modules.sql.users_sql as sql
+# @weeb_oo
 
 from sys import argv
 from typing import Optional
-from zeldris import (
+from KomiXRyu import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -31,12 +31,12 @@ from zeldris import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from zeldris.events import register
-from zeldris.modules import ALL_MODULES
-from zeldris.modules.helper_funcs.chat_status import is_user_admin
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.misc import paginate_modules
-from zeldris.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.events import register
+from KomiXRyu.modules import ALL_MODULES
+from KomiXRyu.modules.helper_funcs.chat_status import is_user_admin
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.misc import paginate_modules
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -84,17 +84,17 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-HELP_IMG = "https://telegra.ph/file/b920d0c82a1ec55045bec.mp4"
+HELP_IMG = ""
 HELP_MSG = "Click the button below to get help menu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
-START_IMG = "https://telegra.ph/file/d85f39ca5e58ef5644401.mp4"
+START_IMG = ""
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/d8d515b36537c6375246d.jpg) 」────
-Heyyo `{}`, Voilet here to help,
+Heyyo `{}`,  here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
+•  Status: [Fine]("")
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
@@ -109,15 +109,11 @@ Haven't slept since: {}
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 ADD ME IN YOUR GROUP",url="t.me/voilet_probot?startgroup=true"),
+            text="💖 ADD ME IN YOUR GROUP",url="t.me/KomiXRyu_Bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-            text="⚙️ Support", url=f"https://t.me/villainevil_support"),
-        InlineKeyboardButton(
-            text="🎉 Updates", url="https://t.me/dabi_updates")
-    ],
-    [                    
+            text="⚙️ Support", url=f"https://t.me/Komisansupport"),                    
         InlineKeyboardButton(
             text="🔐 Help", callback_data="help_back"
         ),
@@ -150,7 +146,7 @@ USER_SETTINGS = {}
 GDPR = []
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("zeldris.modules." + module_name)
+    imported_module = importlib.import_module("KomiXRyu.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -261,10 +257,10 @@ def start(update: Update, context: CallbackContext):
              reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/Villainevil_support")
+                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/Komisansupport")
                   ],
                   [
-                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/Dabi_updates")
+                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/weeb_oo")
                   ]
                 ]
             ),
@@ -656,8 +652,8 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                "@Villainevil_support",
-                "https://telegra.ph/file/363b020f4bd4810ea35b6.jpg",
+                "@Komisansupport",
+                "",
                 "I Am Alive Now!",
                 parse_mode=ParseMode.MARKDOWN,
             )
