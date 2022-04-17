@@ -3,9 +3,9 @@ import json
 import requests
 from telegram.ext import CommandHandler, run_async
 
-from zeldris import dispatcher
-from zeldris.modules.helper_funcs.alternate import send_message
-from zeldris.modules.helper_funcs.chat_status import user_admin
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.helper_funcs.alternate import send_message
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin
 
 
 @run_async
