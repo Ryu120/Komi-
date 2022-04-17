@@ -1,8 +1,8 @@
-# © @The_Ghost_Hunter
+
 import aiohttp
 from pyrogram import filters
-from zeldris import pbot
-from zeldris.utlis.error import capture_err
+from KomiXRyu import pbot
+from KomiXRyu.utlis.error import capture_err
 
 
 __mod_name__ = "Github"
