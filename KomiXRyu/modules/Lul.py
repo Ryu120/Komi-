@@ -1,13 +1,13 @@
 import requests
 url = "https://iamai.p.rapidapi.com/ask"
-from zeldris import client as telethn, OWNER_ID
-from zeldris.events import register
+from KomiXRyu import client as telethn, OWNER_ID
+from KomiXRyu.events import register
 from telethon import events
 from telethon import types
 from telethon.tl import functions
 import asyncio, os
 
-@register(pattern="Violet (.*)")
+@register(pattern="Komi (.*)")
 async def hmm(event):
   test = event.pattern_match.group(1)
    
@@ -28,7 +28,7 @@ async def hmm(event):
   result = (lodu['message']['text'])
   
   if "no no" in result:
-   pro = "I am fairly young and I was made by @Horni_Senpaii"
+   pro = "I am fairly young and I was made by @weeb_oo"
    try:
       async with telethn.action(event.chat_id, 'typing'):
            await asyncio.sleep(2)
@@ -36,7 +36,7 @@ async def hmm(event):
    except CFError as e:
            print(e)
   elif "ann" in result:
-   pro = "My name is Violet"
+   pro = "My name is Komi"
    try:
       async with telethn.action(event.chat_id, 'typing'):
            await asyncio.sleep(2)
