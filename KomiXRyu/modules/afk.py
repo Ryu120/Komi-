@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import time
 
@@ -21,19 +5,19 @@ from telegram import MessageEntity
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler
 
-from zeldris import dispatcher, REDIS
-from zeldris.modules.disable import (
+from KomiXRyu import dispatcher, REDIS
+from KomiXRyu.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from zeldris.modules.helper_funcs.readable_time import get_readable_time
-from zeldris.modules.redis.afk_redis import (
+from KomiXRyu.modules.helper_funcs.readable_time import get_readable_time
+from KomiXRyu.modules.redis.afk_redis import (
     start_afk,
     end_afk,
     is_user_afk,
     afk_reason,
 )
-from zeldris.modules.users import get_user_id
+from KomiXRyu.modules.users import get_user_id
 
 AFK_GROUP = 7
 AFK_REPLY_GROUP = 8
@@ -56,7 +40,7 @@ def afk(update, _):
     REDIS.set(f"afk_time_{user.id}", start_afk_time)
     fname = user.first_name
     try:
-        message.reply_text(f"{fname} is now AFK!")
+        message.reply_text(f"{fname} is now dead!")
     except BadRequest:
         pass
 
@@ -80,7 +64,7 @@ def no_longer_afk(update, _):
         firstname = update.effective_user.first_name
         try:
             message.reply_text(
-                f"{firstname} is back online!\nYou were away for: {end_afk_time}"
+                f"{firstname} is back alive!\nYou were dead for: {end_afk_time}"
             )
         except BadRequest:
             return
