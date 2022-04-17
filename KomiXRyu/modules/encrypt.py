@@ -1,6 +1,6 @@
-from zeldris import client as tbot
+from KomiXRyu import client as tbot
 import os
-from zeldris.events import register
+from KomiXRyu.events import register
 import secureme
 
 @register(pattern="^/encrypt ?(.*)")
