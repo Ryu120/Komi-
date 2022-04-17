@@ -4,7 +4,7 @@ import time
 import asyncio
 
 from asyncio.exceptions import TimeoutError
-from zeldris import API_ID, API_HASH, pbot
+from KomiXRyu import API_ID, API_HASH, pbot
 from pyrogram import filters, Client
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import (
@@ -14,7 +14,7 @@ from pyrogram.errors import (
 )
 
 PHONE_NUMBER_TEXT = (
-    "📞__ Ssend your Phone number to Continue"
+    "📞__ Send your Phone number to Continue"
     " include Country code.__\n**Eg:** `+13124562345`\n\n"
     "Press /cancel to Cancel."
 )
