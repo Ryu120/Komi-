@@ -1,17 +1,17 @@
 import html
 from typing import Optional
 
-import zeldris.modules.sql.blsticker_sql as sql
-from zeldris import LOGGER, dispatcher
-from zeldris.modules.connection import connected
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import send_message
-from zeldris.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from zeldris.modules.helper_funcs.misc import split_message
-from zeldris.modules.helper_funcs.string_handling import extract_time
+import KomiXRyu.modules.sql.blsticker_sql as sql
+from KomiXRyu import LOGGER, dispatcher
+from KomiXRyu.modules.connection import connected
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import send_message
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from KomiXRyu.modules.helper_funcs.misc import split_message
+from KomiXRyu.modules.helper_funcs.string_handling import extract_time
 
-from zeldris.modules.log_channel import loggable
-from zeldris.modules.warns import warn
+from KomiXRyu.modules.log_channel import loggable
+from KomiXRyu.modules.warns import warn
 from telegram import Chat, Message, ParseMode, Update, User, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
