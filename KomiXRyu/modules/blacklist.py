@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 import re
@@ -23,17 +7,17 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters
 from telegram.utils.helpers import mention_html
 
-import zeldris.modules.sql.blacklist_sql as sql
-from zeldris import dispatcher, LOGGER
-from zeldris.modules.connection import connected
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import send_message, typing_action
-from zeldris.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from zeldris.modules.helper_funcs.extraction import extract_text
-from zeldris.modules.helper_funcs.misc import split_message
-from zeldris.modules.helper_funcs.string_handling import extract_time
-from zeldris.modules.log_channel import loggable
-from zeldris.modules.warns import warn
+import KomiXRyu.modules.sql.blacklist_sql as sql
+from KomiXRyu import dispatcher, LOGGER
+from KomiXryu.modules.connection import connected
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import send_message, typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from KomiXRyu.modules.helper_funcs.extraction import extract_text
+from KomiXRyu.modules.helper_funcs.misc import split_message
+from KomiXRyu.modules.helper_funcs.string_handling import extract_time
+from KomiXRyu.modules.log_channel import loggable
+from KomiXRyu.modules.warns import warn
 
 BLACKLIST_GROUP = 11
 
