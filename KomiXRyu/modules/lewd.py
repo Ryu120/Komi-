@@ -2,18 +2,18 @@ import os
 import html
 import nekos
 import requests
-import zeldris.modules.sql.nsfw_sql as sql
+import KomiXRyu.modules.sql.nsfw_sql as sql
 
 from time import sleep
 from PIL import Image
 from telegram import ParseMode
-from zeldris import dispatcher, updater
-from zeldris.modules.log_channel import loggable
+from KomiXRyu import dispatcher, updater
+from KomiXRyu.modules.log_channel import loggable
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram.error import BadRequest, RetryAfter, Unauthorized
 from telegram.ext import CommandHandler, run_async, CallbackContext
-from zeldris.modules.helper_funcs.filters import CustomFilters
-from zeldris.modules.helper_funcs.chat_status import user_admin
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu.modules.helper_funcs.chat_status import user_admin
 from telegram.utils.helpers import mention_html, mention_markdown, escape_markdown
 
 @user_admin
