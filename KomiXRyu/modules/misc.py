@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import codecs
 import html
@@ -42,7 +26,7 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, Filters, CallbackContext
 from telegram.utils.helpers import escape_markdown, mention_html
 
-from zeldris import (
+from KomiXRyu import (
     dispatcher,
     OWNER_ID,
     DEV_USERS,
@@ -52,11 +36,11 @@ from zeldris import (
     WALL_API,
     spamwtc,
 )
-from zeldris.__main__ import STATS, USER_INFO, GDPR
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import typing_action, send_action
-from zeldris.modules.helper_funcs.extraction import extract_user
-from zeldris.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu.__main__ import STATS, USER_INFO, GDPR
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import typing_action, send_action
+from KomiXRyu.modules.helper_funcs.extraction import extract_user
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
 
 
 @typing_action
@@ -127,25 +111,25 @@ def info(update, context):
         return
 
     del_msg = msg.reply_text(
-        "Hold tight while I steal some data from <b>FBI Database</b>...",
+        "Gathering <b>Info</b>...",
         parse_mode=ParseMode.HTML,
     )
 
     text = (
-        "<b>USER INFO</b>:"
+        "<b>Usᴇʀ Iɴғᴏ</b>:"
         "\n\nID: <code>{}</code>"
-        "\nFirst Name: {}".format(user.id, html.escape(user.first_name))
+        "\nFɪʀsᴛ Nᴀᴍᴇ: {}".format(user.id, html.escape(user.first_name))
     )
 
     if user.last_name:
-        text += "\nLast Name: {}".format(html.escape(user.last_name))
+        text += "\nLᴀsᴛ Nᴀᴍᴇ: {}".format(html.escape(user.last_name))
 
     if user.username:
-        text += "\nUsername: @{}".format(html.escape(user.username))
+        text += "\nUsᴇʀɴᴀᴍᴇ: @{}".format(html.escape(user.username))
 
-    text += "\nPermanent user link: {}".format(mention_html(user.id, "link"))
+    text += "\nPᴇʀᴍᴀɴᴇɴᴛ Usᴇʀ Lɪɴᴋ: {}".format(mention_html(user.id, "link"))
 
-    text += "\nNumber of profile pics: {}".format(
+    text += "\nNᴜᴍʙᴇʀ Oғ Pʀᴏғɪʟᴇ Pɪᴄs: {}".format(
         context.bot.get_user_profile_photos(user.id).total_count
     )
 
@@ -160,27 +144,27 @@ def info(update, context):
     disaster_level_present = False
 
     if user.id == OWNER_ID:
-        text += ("\n\nThe Disaster level of this person is <b>'MONARCH'</b>.")
+        text += ("\n\nThis person is my <b>'Darling'</b>.")
         disaster_level_present = True
     elif user.id in DEMONS:
-        text += ("\n\nThe Disaster level of this person is <b>'MURDERER'</b>.")
+        text += ("\n\nThis person is my <b>'Best Friend'</b>.")
         disaster_level_present = True
     elif user.id in DEV_USERS:
-        text += ("\n\nThis user is  the <b>'Villain'</b>.")
+        text += ("\n\nThis person is my <b>'Onii Chan'</b>.")
         disaster_level_present = True
     elif user.id in SUPPORT_USERS:
         text += (
-            "\n\n This user is the <b>'Dragon'</b>"
+            "\n\n This person is my <b>'Sensei'</b>"
         )
         disaster_level_present = True
     elif user.id in WHITELIST_USERS:
         text += (
-            "\n\n This user is the <b>'Assassin'</b>"
+            "\n\n This user is my <b>'Friend'</b>"
         )
         disaster_level_present = True
 
     if disaster_level_present:
-        text += ' [<a href="https://t.me/DABI_UPDATES/9">😈</a>]'
+        text += ' [<a href="https://t.me/Komiupdates/9">?</a>]'
 
     try:
         memstatus = chat.get_member(user.id).status
@@ -476,7 +460,7 @@ def rmemes(update, context):
 
 def sudo_ids(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known DRAGON Disasters :</b>\n"
+    reply = "<b>My Sensei's :</b>\n"
     for each_user in SUPPORT_USERS:
         user_id = int(each_user)
         try:
@@ -488,7 +472,7 @@ def sudo_ids(update: Update, context: CallbackContext):
 
 def dev_ids(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known VILLAIN Disasters :</b>\n"
+    reply = "<b>My Onii Chans:</b>\n"
     for each_user in DEV_USERS:
         user_id = int(each_user)
         try:
@@ -500,7 +484,7 @@ def dev_ids(update: Update, context: CallbackContext):
 
 def support_ids(update: Update, context: CallbackContext):
     bot = context.bot
-    reply = "<b>Known ASSASSIN Disasters :</b>\n"
+    reply = "<b>My Best Friends:</b>\n"
     for each_user in WHITELIST_USERS:
         user_id = int(each_user)
         try:
