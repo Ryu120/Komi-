@@ -14,7 +14,7 @@ from zeldris import pbot
 
 
 
-@pbot.on_message(filters.command["rename", "rename@Voilet_probot"],filters.private & (filters.document | filters.video))
+@pbot.on_message(filters.command["rename", "rename@KomiXryu_Bot"],filters.private & (filters.document | filters.video))
 async def rename_cb(bot, update):
  
     file = update.document or update.video
