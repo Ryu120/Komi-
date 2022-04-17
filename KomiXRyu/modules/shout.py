@@ -1,5 +1,5 @@
-from zeldris import dispatcher
-from zeldris.modules.disable import DisableAbleCommandHandler
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
