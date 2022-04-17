@@ -2,8 +2,8 @@ import requests
 from telegram import ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
-from zeldris import dispatcher
-from zeldris.modules.disable import DisableAbleCommandHandler
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
 
 
 @run_async
