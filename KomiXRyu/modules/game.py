@@ -6,11 +6,11 @@ from telegram import ParseMode, Update, ChatPermissions
 from telegram.ext import CallbackContext, run_async
 from telegram.error import BadRequest
 
-import zeldris.modules.game_strings as game_strings
-from zeldris import dispatcher
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.chat_status import (is_user_admin)
-from zeldris.modules.helper_funcs.extraction import extract_user
+import KomiXRyu.modules.game_strings as game_strings
+from KomiXRyu import dispatcher
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.chat_status import (is_user_admin)
+from KomiXRyu.modules.helper_funcs.extraction import extract_user
 
 
 @run_async
