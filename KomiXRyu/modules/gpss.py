@@ -1,8 +1,8 @@
 import os
-from zeldris import client as tbot
+from KomiXRyu import client as tbot
 from geopy.geocoders import Nominatim
-from zeldris.events import register
-from zeldris import *
+from KomiXRyu.events import register
+from KomiXRyu import *
 from telethon import *
 from telethon.tl import *
 
