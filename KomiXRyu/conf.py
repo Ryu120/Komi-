@@ -1,5 +1,5 @@
 from envparse import env
-from zeldris  import LOGGER
+from KomiXRyu  import LOGGER
 
 DEFAULTS = {
     "LOAD_MODULES": True,
