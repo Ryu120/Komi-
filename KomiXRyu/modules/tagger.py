@@ -3,8 +3,8 @@ import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from zeldris import client as telethn
-from zeldris.events import register as nobara
+from KomiXryu import client as telethn
+from KomiXryu.events import register as nobara
 
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
@@ -40,5 +40,5 @@ async def _(event):
 
 __mod_name__ = "Tagger"
 __help__ = """
-  ➢ `/tagall : Tag everyone in a chat
+  × `/tagall : Tag everyone in a chat
 """
