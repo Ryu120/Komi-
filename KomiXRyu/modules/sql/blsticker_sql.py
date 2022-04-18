@@ -1,6 +1,6 @@
 import threading
 
-from zeldris.modules.sql import BASE, SESSION
+from KomiXRyu.modules.sql import BASE, SESSION
 from sqlalchemy import Column, Integer, String, UnicodeText, distinct, func
 
 
