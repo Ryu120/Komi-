@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 import re
@@ -32,26 +16,26 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html
 
-from zeldris import dispatcher  # BAN_STICKER
-from zeldris.modules.disable import DisableAbleCommandHandler
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.chat_status import (
+from KomiXRyu import dispatcher  # BAN_STICKER
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import (
     is_user_admin,
     bot_admin,
     user_admin_no_reply,
     user_admin,
     can_restrict,
 )
-from zeldris.modules.helper_funcs.extraction import (
+from KomiXRyu.modules.helper_funcs.extraction import (
     extract_text,
     extract_user_and_text,
     extract_user,
 )
-from zeldris.modules.helper_funcs.filters import CustomFilters
-from zeldris.modules.helper_funcs.misc import split_message
-from zeldris.modules.helper_funcs.string_handling import split_quotes
-from zeldris.modules.log_channel import loggable
-from zeldris.modules.sql import warns_sql as sql
+from KomiXRyu.modules.helper_funcs.filters import CustomFilters
+from KomiXRyu.modules.helper_funcs.misc import split_message
+from KomiXRyu.modules.helper_funcs.string_handling import split_quotes
+from KomiXRyu.modules.log_channel import loggable
+from KomiXRyu.modules.sql import warns_sql as sql
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
