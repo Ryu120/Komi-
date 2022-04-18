@@ -15,8 +15,8 @@ from KomiXRyu.modules.helper_funcs.admin_rights import (
     user_can_promote,
     user_can_changeinfo,
 )
-from zeldris.modules.helper_funcs.alternate import typing_action
-from zeldris.modules.helper_funcs.chat_status import (
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.chat_status import (
     bot_admin,
     can_promote,
     user_admin,
