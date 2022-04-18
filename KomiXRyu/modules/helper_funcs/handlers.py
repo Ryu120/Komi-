@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import telegram.ext as tg
 from pyrate_limiter import (
@@ -25,11 +9,11 @@ from pyrate_limiter import (
 )
 from telegram import Update
 
-import zeldris.modules.sql.blacklistusers_sql as sql
-from zeldris import LOGGER, DEV_USERS, SUPPORT_USERS, WHITELIST_USERS
+import KomiXRyu.modules.sql.blacklistusers_sql as sql
+from KomiXRyu import LOGGER, DEV_USERS, SUPPORT_USERS, WHITELIST_USERS
 
 try:
-    from zeldris import CUSTOM_CMD
+    from KomiXRyu import CUSTOM_CMD
 except BaseException:
     CUSTOM_CMD = False
 
