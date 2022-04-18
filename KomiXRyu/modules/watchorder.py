@@ -1,6 +1,6 @@
 import requests
 
-from zeldris import pbot as pgram
+from KomiXRyu import pbot as pgram
 from pyrogram import filters
 from bs4 import BeautifulSoup
 
@@ -29,5 +29,5 @@ def watchorderx(_,message):
 __mod_name__ = "Watch Order"
 __help__ = """
 *Watch Order*
- ❍ `/watchorder` :Get watch order of animes
+ × `/watchorder` :Get watch order of animes
 """
