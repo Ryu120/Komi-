@@ -11,9 +11,9 @@ if is_module_loaded(FILENAME):
     from telegram.ext import CommandHandler
     from telegram.utils.helpers import escape_markdown
 
-    from zeldris import LOGGER, dispatcher
-    from zeldris.modules.helper_funcs.chat_status import user_admin
-    from zeldris.modules.sql import log_channel_sql as sql
+    from KomiXRyu import LOGGER, dispatcher
+    from KomiXRyu.modules.helper_funcs.chat_status import user_admin
+    from KomiXRyu.modules.sql import log_channel_sql as sql
 
     def loggable(func):
         @wraps(func)
