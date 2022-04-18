@@ -4,23 +4,23 @@ import json
 import os
 from typing import Optional
 
-from zeldris import (DEV_USERS, OWNER_ID, SUPPORT_USERS, WHITELIST_USERS, dispatcher)
-from zeldris.modules.helper_funcs.chat_status import (dev_plus, sudo_plus,
+from KomiXRyu import (DEV_USERS, OWNER_ID, SUPPORT_USERS, WHITELIST_USERS, dispatcher)
+from KomiXRyu.modules.helper_funcs.chat_status import (dev_plus, sudo_plus,
                                                            ass_plus)
-from zeldris.modules.helper_funcs.extraction import extract_user
-from zeldris.modules.log_channel import loggable
+from KomiXRyu.modules.helper_funcs.extraction import extract_user
+from KomiXRyu.modules.log_channel import loggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
 ELEVATED_USERS_FILE = os.path.join(os.getcwd(),
-                                   'zeldris/elevated_users.json')
+                                   'KomiXRyu/elevated_users.json')
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
     bot = context.bot
     if not user_id:
-        reply = "That...is a chat! baka ka omae?"
+        reply = "That...is a chat! baka baka!"
 
     elif user_id == bot.id:
         reply = "This does not work that way."
@@ -64,15 +64,15 @@ def addpiro(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
         
     if int(user_id) in DEV_USERS:
-      message.reply_text("This member is already a Villain")
+      message.reply_text("This member is already my Onii chan")
         
     if user_id in SUPPORT_USERS:
-        rt += "Requested HQ to promote a Dragon Disaster to Villain."
+        rt += "Requested to Darling to promote a Sensei to Onii chan."
         data['sudos'].remove(user_id)
         SUPPORT_USERS.remove(user_id)
 
     if user_id in WHITELIST_USERS:
-        rt += "Requested HQ to promote a Assassin Disaster to Villain."
+        rt += "Requested to Darling to promote my Best friend to Onii chan."
         data['whitelist'].remove(user_id)
         WHITELIST_USERS.remove(user_id)
 
@@ -83,7 +83,7 @@ def addpiro(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Villain!".format(
+        rt + "\nSuccessfull {} He is my Onii chan!".format(
             user_member.first_name))
 
     log_message = (
@@ -119,11 +119,11 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in SUPPORT_USERS:
-        message.reply_text("This member is already a Dragon Disaster")
+        message.reply_text("This member is already my Sensei")
         return ""
 
     if user_id in WHITELIST_USERS:
-        rt += "Requested HA to promote a Assassin Disaster to Dragon."
+        rt += "Requested to Darling to promote my Best Friend to Sensei."
         data['whitelist'].remove(user_id)
         WHITELIST_USERS.remove(user_id)
 
@@ -135,7 +135,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + "\nSuccessfully set Disaster level of {} to Dragon!".format(
+        rt + "\nSuccessfull {} is my Sensei!".format(
             user_member.first_name))
 
     log_message = (
@@ -174,12 +174,12 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in SUPPORT_USERS:
-        rt += "Requested HA to demote this Dragon to Assassin"
+        rt += "Requested Darling to demote him to Sensei to Best Friend"
         data['sudos'].remove(user_id)
         SUPPORT_USERS.remove(user_id)
 
     if user_id in WHITELIST_USERS:
-        message.reply_text("This user is already a Assassin Disaster.")
+        message.reply_text("This user is already a Best Friend.")
         return ""
 
 
@@ -190,7 +190,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Assassin Disaster!")
+        rt + f"\n{user_member.first_name} was added as my Best Friend!")
 
     log_message = (
         f"#WHITELIST\n"
@@ -226,7 +226,7 @@ def rmpiro(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DEV_USERS:
-        message.reply_text("Requested HQ to demote this user to Civilian")
+        message.reply_text("Requested Darling to demote this user to Normal User")
         DEV_USERS.remove(user_id)
         data['devs'].remove(user_id)
 
@@ -246,7 +246,7 @@ def rmpiro(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Villain Disaster!")
+        message.reply_text("This user is not my Best friend!")
         return ""
       
       
@@ -270,7 +270,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in SUPPORT_USERS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+        message.reply_text("Requested Darling to demote this user to Normal User")
         DRAGONS.remove(user_id)
         data['sudos'].remove(user_id)
 
@@ -290,7 +290,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Dragon Disaster!")
+        message.reply_text("This user is not my Sensei!")
         return ""
 
 
@@ -314,7 +314,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in WHITELIST_USERS:
-        message.reply_text("Requested HA to demote this user to Civilian")
+        message.reply_text("Requested Darling to demote this user to Normal user")
         WHITELIST_USETS.remove(user_id)
         data['whitelist'].remove(user_id)
 
@@ -333,19 +333,19 @@ def removesupport(update: Update, context: CallbackContext) -> str:
         return log_message
 
     else:
-        message.reply_text("This user is not a Assassin level Disaster!")
+        message.reply_text("This user is not my best friend!")
         return ""
 
 
 
 
-DEV_HANDLER = CommandHandler(("addpiro", "adddev"), addpiro)
-SUDO_HANDLER = CommandHandler(("addsudo", "adddrag"), addsudo)
-SUPPORT_HANDLER = CommandHandler(("addass", "addsupport"), addsupport)
+DEV_HANDLER = CommandHandler(("addonii", "adddev"), addpiro)
+SUDO_HANDLER = CommandHandler(("addsensei", "adddrag"), addsudo)
+SUPPORT_HANDLER = CommandHandler(("addbestie", "addsupport"), addsupport)
 
-RMPIRO_HANDLER = CommandHandler(("rmpiro", "rmdev"), rmpiro)
-UNSUDO_HANDLER = CommandHandler(("rmsudo", "rmdrag"), removesudo)
-UNSUPPORT_HANDLER = CommandHandler(("rmass", "removeass"),
+RMPIRO_HANDLER = CommandHandler(("rmonii", "rmdev"), rmpiro)
+UNSUDO_HANDLER = CommandHandler(("rmsensei", "rmsudo"), removesudo)
+UNSUPPORT_HANDLER = CommandHandler(("rmbestie", "removesupp"),
                                    removesupport)
 
 dispatcher.add_handler(DEV_HANDLER)
