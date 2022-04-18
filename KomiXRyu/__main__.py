@@ -653,7 +653,7 @@ def main():
         try:
             dispatcher.bot.send_photo(
                 "@Komisansupport",
-                "",
+                "https://telegra.ph//file/2c817a1e191b120554f41.jpg",
                 "I Am Alive Now!",
                 parse_mode=ParseMode.MARKDOWN,
             )
