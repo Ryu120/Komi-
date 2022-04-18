@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import random
 import threading
@@ -21,19 +5,19 @@ from typing import Union
 
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from sqlalchemy.sql.sqltypes import BigInteger
-from zeldris.modules.helper_funcs.msg_types import Types
-from zeldris.modules.sql import BASE, SESSION
+from KomiXRyu.modules.helper_funcs.msg_types import Types
+from KomiXRyu.modules.sql import BASE, SESSION
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
 
 DEFAULT_WELCOME_MESSAGES = [
     "{first} is here!",  # Discord welcome messages copied
-    "Ready player {first}",
-    "Genos, {first} is here.",
-    "A wild {first} appeared.",
-    "{first} came in like a Lion!",
-    "{first} has joined your party.",
+    "Ready everyone {first}",
+    "Teacher, {first} is here.",
+    "Why is {first} here? .",
+    "{first} came in like Flirt!",
+    "{first} has joined beware of simp.",
     "{first} just joined. Can I get a heal?",
     "{first} just joined the chat - asdgfhak!",
     "{first} just joined. Everyone, look busy!",
@@ -43,10 +27,10 @@ DEFAULT_WELCOME_MESSAGES = [
     "Welcome, {first}. Leave your weapons by the door.",
     "Swoooosh. {first} just landed.",
     "Brace yourselves. {first} just joined the chat.",
-    "{first} just joined. Hide your bananas.",
+    "{first} just joined. Hide your bananas you pervert.",
     "{first} just arrived. Seems OP - please nerf.",
     "{first} just slid into the chat.",
-    "A {first} has spawned in the chat.",
+    "A {first} here in the chat.",
     "Big {first} showed up!",
     "Where’s {first}? In the chat!",
     "{first} hopped into the chat. Kangaroo!!",
