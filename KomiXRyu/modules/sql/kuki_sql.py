@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String
-from zeldris.modules.sql import BASE, SESSION
+from KomiXRyu.modules.sql import BASE, SESSION
 
 class KukiChats(BASE):
     __tablename__ = "kuki_chats"
