@@ -10,3 +10,9 @@ Can be found on telegram as [Komi](https://t.me/KomiXryu_bot).
 The Support group can be reached out to at [Support Komi](https://t.me/Komisansupport), where you can ask for help about [Komi](https://t.me/Weeb_oo), discover/request new features, report bugs, and stay in the loop whenever a new update is available. 
 
 Bot Owner [亗 ʀ ʏ ᴜ](https://t.me/Weeb_oo) 
+
+<h2 align="center">
+    ──「 DEPLOY ON HEROKU 」──
+</h2>
+
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Ryu120/Komi-"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-purple?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
