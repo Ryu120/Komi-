@@ -1,19 +1,3 @@
-# ZeldrisRobot
-# Copyright (C) 2017-2019, Paul Larsen
-# Copyright (c) 2021, IDNCoderX Team, <https://github.com/IDN-C-X/ZeldrisRobot>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU Affero General Public License for more details.
-#
-# You should have received a copy of the GNU Affero General Public License
-# along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 import html
 import random
@@ -39,8 +23,8 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
-import zeldris.modules.sql.welcome_sql as sql
-from zeldris import (
+import KomiXRyu.modules.sql.welcome_sql as sql
+from KomiXRyu import (
     DEV_USERS,
     DEMONS,
     LOGGER,
@@ -50,18 +34,18 @@ from zeldris import (
     spamwtc,
     dispatcher,
 )
-from zeldris.modules.helper_funcs.chat_status import (
+from KomiXRyu.modules.helper_funcs.chat_status import (
     is_user_ban_protected,
     user_admin,
 )
-from zeldris.modules.helper_funcs.misc import build_keyboard, revert_buttons
-from zeldris.modules.helper_funcs.msg_types import get_welcome_type
-from zeldris.modules.helper_funcs.string_handling import (
+from KomiXRyu.modules.helper_funcs.misc import build_keyboard, revert_buttons
+from KomiXRyu.modules.helper_funcs.msg_types import get_welcome_type
+from KomiXRyu.modules.helper_funcs.string_handling import (
     escape_invalid_curly_brackets,
     markdown_parser,
 )
-from zeldris.modules.log_channel import loggable
-from zeldris.modules.sql.global_bans_sql import is_user_gbanned
+from KomiXRyu.modules.log_channel import loggable
+from KomiXRyu.modules.sql.global_bans_sql import is_user_gbanned
 
 VALID_WELCOME_FORMATTERS = [
     "first",
@@ -219,7 +203,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Give the owner a special welcome
             if new_mem.id == OWNER_ID:
                 update.effective_message.reply_photo("https://telegra.ph/file/a1a2a107c7801afd8a948.jpg",
-                    "Monarch Entered The Chat!!!",
+                    "My Darling is in the Chat!!!",
                     reply_to_message_id=reply,
                 )
                 welcome_log = (
@@ -232,7 +216,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Devs
             if new_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "Be Cool! A Villain just joined the group!",
+                    "Be Cool! my Onii Chan just joined the group!",
                     reply_to_message_id=reply,
                 )
                 continue
@@ -249,10 +233,10 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
                         [
                             [
                                 InlineKeyboardButton(
-                                    text="☎️ Support", url="https://t.me/villainevil_support"
+                                    text="☎️ Support", url="https://t.me/Komisansupport"
                                 ),
                                 InlineKeyboardButton(
-                                    text="Updates 📡", url="https://t.me/dabi_updates"
+                                    text="Updates 📡", url="https://t.me/Weeb_oo"
                                 ),
                             ]
                         ],
@@ -609,14 +593,14 @@ def left_member(update: Update, context: CallbackContext):  # sourcery no-metric
             # Give the owner a special goodbye
             if left_mem.id == OWNER_ID:
                 update.effective_message.reply_text(
-                    "See you later at Demon clan!", reply_to_message_id=reply
+                    "See you later at school!", reply_to_message_id=reply
                 )
                 return
 
             # Give the devs a special goodbye
             if left_mem.id in DEV_USERS:
                 update.effective_message.reply_text(
-                    "See you later at Demon clan!",
+                    "See you later at school!",
                     reply_to_message_id=reply,
                 )
                 return
