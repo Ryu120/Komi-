@@ -1,7 +1,7 @@
 from pyrogram import filters
 
-from zeldris import pbot as app
-from zeldris.utlis.error import capture_err
+from KomiXRyu import pbot as app
+from KomiXRyu.utlis.error import capture_err
 
 __mod_name__ = "WebSS"
 __help__ = "`/webss` [URL] - Take A Screenshot Of A Webpage"
