@@ -3,8 +3,8 @@ import asyncio
 from telethon import events
 from telethon.tl.types import ChannelParticipantsAdmins
 
-from KomiXryu import client as telethn
-from KomiXryu.events import register as nobara
+from KomiXRyu import client as telethn
+from KomiXRyu.events import register as nobara
 
 from telegram.utils.helpers import escape_markdown, mention_html, mention_markdown
 
