@@ -232,7 +232,7 @@ def dev_plus(func):
         else:
             update.effective_message.reply_text(
                 "This is a developer restricted command."
-                " You do not have permissions to run this.Learn more at @Villainevil_support"
+                " You do not have permissions to run this.Learn more at @Komisansupport"
             )
 
     return is_dev_plus_func
