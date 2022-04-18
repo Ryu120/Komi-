@@ -1,5 +1,5 @@
 from sqlalchemy import Column, String, Numeric, Boolean
-from zeldris.modules.sql import BASE, SESSION
+from KomiXRyu.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):
