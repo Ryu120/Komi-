@@ -302,6 +302,6 @@ def connection_status(func):
 
 
 # Workaround for circular import with connection.py
-from zeldris.modules import connection
+from KomiXRyu.modules import connection
 
 connected = connection.connected
