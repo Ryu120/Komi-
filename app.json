@@ -1,17 +1,17 @@
 {
-  "name": "ZeldrisRobot",
+  "name": "Komi - San",
   "description": "Telegram group management bot.",
-  "logo": "https://telegra.ph/file/016628a91c2d0ed99c3cf.jpg",
+  "logo": "",
   "keywords": [
     "telegram",
     "anime",
     "group",
     "manager",
-    "Zeldris"
+    "Komi"
   ],
-  "repository": "https://github.com/Auramoon55/voilet.git",
-  "website": "https://idn-c-x.github.io",
-  "success_url": "t.me/IDNCoder",
+  "repository": "https://github.com/Ryu120/Komi-.git",
+  "website": "https://Ryu120.github.io",
+  "success_url": "t.me/Weeb_oo",
   "addons": [
    {
      "options": {
