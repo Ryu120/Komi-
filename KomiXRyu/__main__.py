@@ -84,17 +84,17 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-HELP_IMG = ""
+HELP_IMG = "https://telegra.ph//file/b3aedf8d65276f8241556.jpg"
 HELP_MSG = "Click the button below to get help menu in your pm."
 START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
-START_IMG = ""
+START_IMG = "https://telegra.ph//file/f4e28ef63d3f7c04ac5ad.jpg"
     
 PM_START_TEXT = """
 Heyyo `{}`,  here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • *Uptime:* `{}`
-•  Status: [Fine]("")
+•  Status: [Fine]("https://telegra.ph/file/e627baf23c5cd3e0cff73.mp4")
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
 • `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
@@ -250,7 +250,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
                 update.effective_message.reply_video(
-            START_IMG, caption="ʏᴏ, Voilet ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            START_IMG, caption="ʏᴏ, Komi ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
