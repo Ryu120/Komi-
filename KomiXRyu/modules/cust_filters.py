@@ -28,7 +28,7 @@ from KomiXRyu.modules.helper_funcs.string_handling import (
     markdown_to_html,
     split_quotes,
 )
-from KomiXryu.modules.sql import cust_filters_sql as sql
+from KomiXRyu.modules.sql import cust_filters_sql as sql
 
 HANDLER_GROUP = 15
 
