@@ -90,14 +90,14 @@ START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
 START_IMG = "https://telegra.ph//file/f4e28ef63d3f7c04ac5ad.jpg"
     
 PM_START_TEXT = """
+────「 [{}](https://telegra.ph/file/e627baf23c5cd3e0cff73.mp4) 」────
 Heyyo `{}`,  here to help,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
+┏━━━━━━━━━━━━━━━━━━━━
+┣♡ *Uptime:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-• *Uptime:* `{}`
-•  Status: [Fine]("https://telegra.ph/file/e627baf23c5cd3e0cff73.mp4")
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-• `{}` *users, across* `{}` *chats.*
-➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
+┣♡ `{}` *users, across* `{}` *chats.*
+┗━━━━━━━━━━━━━━━━━━━━
 *Try The Help Buttons Below To Know My Abilities And Charm* ××
 """
 
@@ -249,7 +249,7 @@ def start(update: Update, context: CallbackContext):
                 timeout=60,
             )
     else:
-                update.effective_message.reply_video(
+                update.effective_message.reply_photo(
             START_IMG, caption="ʏᴏ, Komi ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
