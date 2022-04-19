@@ -9,7 +9,7 @@ from telegram.utils.helpers import mention_html
 
 import KomiXRyu.modules.sql.blacklist_sql as sql
 from KomiXRyu import dispatcher, LOGGER
-from KomiXryu.modules.connection import connected
+from KomiXRyu.modules.connection import connected
 from KomiXRyu.modules.disable import DisableAbleCommandHandler
 from KomiXRyu.modules.helper_funcs.alternate import send_message, typing_action
 from KomiXRyu.modules.helper_funcs.chat_status import user_admin, user_not_admin
