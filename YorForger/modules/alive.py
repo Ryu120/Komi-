@@ -1,8 +1,7 @@
 import re
 import os
 
-from telethon import events, Button
-from telethon import __version__ as tlhver
+from telethn import events, Button
 from pyrogram import __version__ as pyrover
 from YorForger.events import register as MEMEK
 from YorForger import telethn as tbot
