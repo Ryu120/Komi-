@@ -237,7 +237,8 @@ dispatcher = updater.dispatcher
 
 pbot = Client("ErenPyro", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 pbot.start()
-    
+telethn = TelegramClient("luna", API_ID, API_HASH)
+
 
 DEV_USERS = list(DEV_USERS)
 WHITELIST_USERS = list(WHITELIST_USERS)
