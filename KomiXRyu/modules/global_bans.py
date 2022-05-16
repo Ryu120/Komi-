@@ -12,9 +12,10 @@ from KomiXRyu import (
     dispatcher,
     OWNER_ID,
     DEV_USERS,
-    SUPPORT_USERS,
+    DRAGONS,
     DEMONS,
-    WHITELIST_USERS,
+    TIGERS
+    WOLVES,
     STRICT_GBAN,
     MESSAGE_DUMP,
     spamwtc,
