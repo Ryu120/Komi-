@@ -111,11 +111,7 @@ if ENV:
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     SPAMMERS = os.environ.get("SPAMMERS", None)
   
-     try:
-        BL_CHATS = {int(x) for x in os.environ.get("BL_CHATS", "").split()}
-    except ValueError:
-        raise Exception("Your blacklisted chats list does not contain valid integers.")
-
+    
 else:
     from KomiXRyu.config import Development as Config
 
