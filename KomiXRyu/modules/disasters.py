@@ -19,12 +19,11 @@ from KomiXRyu.modules.helper_funcs.chat_status import (
     whitelist_plus,
 )
 from KomiXRyu.modules.helper_funcs.extraction import extract_user
-from KomiXRyu.modules.log_channel import gloggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler
 from telegram.utils.helpers import mention_html
 
-ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "EmikoRobot/elevated_users.json")
+ELEVATED_USERS_FILE = os.path.join(os.getcwd(), "KomiXRyu/elevated_users.json")
 
 
 def check_user_id(user_id: int, context: CallbackContext) -> Optional[str]:
