@@ -1,4 +1,5 @@
 import html
+from typing import Optional
 import re
 import os
 import requests
@@ -18,29 +19,15 @@ from telegram.ext.dispatcher import run_async
 from telegram.error import BadRequest
 from telegram.utils.helpers import escape_markdown, mention_html
     
-from EmikoRobot import (
-    DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
-    DEMONS,
-    TIGERS,
-    WOLVES,
-    INFOPIC,
-    dispatcher,
-    sw,
-    StartTime,
-    SUPPORT_CHAT,
-)
-from KomiXRyu.__main__ import STATS, TOKEN, USER_INFO
-from KomiXRyu.modules.sql import SESSION
-import KomiXRyu.modules.sql.userinfo_sql as sql
-from KomiXRyu.modules.disable import DisableAbleCommandHandler
-from KomiXRyu.modules.sql.global_bans_sql import is_user_gbanned
-from KomiXRyu.modules.sql.afk_sql import is_afk, set_afk
-from KomiXRyu.modules.sql.users_sql import get_user_num_chats
-from KomiXRyu.modules.helper_funcs.chat_status import sudo_plus
+from KomiXRyu import (DEV_USERS, OWNER_ID, SUPPORT_USERS, WHITELIST_USERS, dispatcher)
 from KomiXRyu.modules.helper_funcs.extraction import extract_user
-from KomiXRyu import telethn
+from KomiXRyu.modules.log_channel import loggable
+
+import KomiXRyu.modules.sql.userinfo_sql as sql
+from KomiXRyu import dispatcher, DEV_USERS
+from KomiXRyu.modules.disable import DisableAbleCommandHandler
+from KomiXRyu.modules.helper_funcs.alternate import typing_action
+from KomiXRyu.modules.helper_funcs.extraction import extract_user
 
 KOMI_IMG = "https://telegra.ph/file/6b69b204a610becf9f00c.jpg"
 
@@ -178,7 +165,7 @@ def get_id(update: Update, context: CallbackContext):
 
 @telethn.on(
     events.NewMessage(
-        pattern="/ginfo ", from_users=(TIGERS or []) + (DRAGONS or []) + (DEMONS or []),
+        pattern="/ginfo ", from_users=(WHITELIST_USERS or []) + (SUPPORT_USERS or []),
     ),
 )
 async def group_info(event) -> None:
@@ -305,17 +292,11 @@ def info(update: Update, context: CallbackContext):
     elif user.id in DEV_USERS:
         text += "\n\nThis user is my 'Onii-Chan 💫'."
         disaster_level_present = True
-    elif user.id in DRAGONS:
+    elif user.id in SUPPORT_USERS:
         text += "\n\nThis is my 'Sensei'."
         disaster_level_present = True
-    elif user.id in DEMONS:
+    elif user.id in WHITELIST_USERS:
         text += "\n\nThis is my 'Senpai'."
-        disaster_level_present = True
-    elif user.id in TIGERS:
-        text += "\n\nThis is my 'BestFriend'."
-        disaster_level_present = True
-    elif user.id in WOLVES:
-        text += "\n\nThis is my 'Friend'."
         disaster_level_present = True
     elif user.id == 5327104856:
          text += "\n\nMy Darling, I Love You. I am His Dear♥️."
