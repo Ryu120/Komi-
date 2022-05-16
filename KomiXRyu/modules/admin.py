@@ -158,7 +158,7 @@ def setchat_title(update: Update, context: CallbackContext):
         return
         
         
-@connection_status
+@typing_action
 @bot_admin
 @can_promote
 @user_admin
