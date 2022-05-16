@@ -656,7 +656,16 @@ def main():
                 "https://telegra.ph//file/2c817a1e191b120554f41.jpg",
                 "I Am Alive Now!",
                 parse_mode=ParseMode.MARKDOWN,
-            )
+            reply_markup=InlineKeyboardMarkup(
+                [
+                  [                  
+                       InlineKeyboardButton(
+                             text="[💝Start Me💝]",
+                             url="https://t.me/KomiXryuBot?start=")
+                     ] 
+                ]
+            ),  
+        )
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
