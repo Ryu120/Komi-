@@ -23,7 +23,16 @@ from KomiXRyu.modules.helper_funcs.chat_status import (
 from KomiXRyu.modules.helper_funcs.extraction import extract_user_and_text
 from KomiXRyu.modules.helper_funcs.string_handling import extract_time
 from KomiXRyu.modules.log_channel import loggable
-
+from KomiXRyu import (
+    DEV_USERS,
+    LOGGER,
+    OWNER_ID,
+    DRAGONS,
+    DEMONS,
+    TIGERS,
+    WOLVES,
+    dispatcher,
+)
 
 @bot_admin
 @can_restrict
