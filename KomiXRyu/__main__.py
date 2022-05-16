@@ -7,7 +7,7 @@ import re
 import sys
 import traceback
 import KomiXRyu.modules.sql.users_sql as sql
-# @weeb_oo
+# GojoSenpai Yowaimooo~
 
 from sys import argv
 from typing import Optional
