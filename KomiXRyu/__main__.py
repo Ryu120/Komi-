@@ -84,38 +84,38 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-HELP_IMG = "https://telegra.ph//file/b3aedf8d65276f8241556.jpg"
+HELP_IMG = "https://telegra.ph/file/bee6f9297ff8d3e2ec1c7.jpg"
 HELP_MSG = "Click the button below to get help menu in your pm."
-START_MSG = "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>"
-START_IMG = "https://telegra.ph//file/f4e28ef63d3f7c04ac5ad.jpg"
+START_MSG = "Kita Working!\n<b>Haven't rested since:</b> <code>{}</code>"
+START_IMG = "https://telegra.ph/file/af0931a6fa8ec665caa65.jpg"
     
 PM_START_TEXT = """
-────「 [{}](https://telegra.ph/file/e627baf23c5cd3e0cff73.mp4) 」────
-Heyyo `{}`,  here to help,
+────「 [{}](https://telegra.ph/file/6ac7223d0a27ffcd3831b.jpg) 」────
+Konichiwa `{}`,  here to manage everything,
 *I am an Anime themed advance group management bot with a lot of awesome Features*
 ┏━━━━━━━━━━━━━━━━━━━━
-┣♡ *Uptime:* `{}`
+× *Working Time:* `{}`
 ➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖
-┣♡ `{}` *users, across* `{}` *chats.*
+× `{}` *Weebs, across* `{}` *chats.*
 ┗━━━━━━━━━━━━━━━━━━━━
-*Try The Help Buttons Below To Know My Abilities And Charm* ××
+*Try The Help Buttons Below To Know My Abilities And Aesthetics* ××
 """
 
 GROUP_START_TEXT = """
-I'm awake already!
-Haven't slept since: {}
+I'm Working Hard!
+Haven't Stopped since: {}
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="💖 ADD ME IN YOUR GROUP",url="t.me/KomiXRyu_Bot?startgroup=true"),
+            text="× Invite Kita To Your Place ×",url="t.me/kitaxrobot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(
-            text="⚙️ Support", url=f"https://t.me/Komisansupport"),                    
+            text="- Support -", url=f"https://t.me/Kitaxsupport"),                    
         InlineKeyboardButton(
-            text="🔐 Help", callback_data="help_back"
+            text="- Help -", callback_data="help_back"
         ),
     ],
 ]
@@ -250,17 +250,17 @@ def start(update: Update, context: CallbackContext):
             )
     else:
                 update.effective_message.reply_photo(
-            START_IMG, caption="ʏᴏ, Komi ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            START_IMG, caption="ʏᴏ, Kita ʜᴇʀᴇ ᴛᴏ ʜᴇʟᴘ!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime,
             ),
             parse_mode=ParseMode.HTML,
              reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/Komisansupport")
+                  InlineKeyboardButton(text="❤Sᴜᴘᴘᴏʀᴛ❤", url="https://telegram.dog/kitaxsupport")
                   ],
                   [
-                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/KomiGotUpdated")
+                  InlineKeyboardButton(text="🔰Uᴘᴅᴀᴛᴇs🔰", url="https://telegram.dog/kitaxupdates")
                   ]
                 ]
             ),
@@ -620,7 +620,7 @@ def donate(update: Update, context: CallbackContext):
     bot = context.bot
     update.effective_message.reply_text(
         "You can also donate to the person currently running me "
-        "[here](https://ko-fi.com/AuraMoon55)",
+        "[here](https://t.me/voidaryan)",
         parse_mode=ParseMode.MARKDOWN,
     )
 
@@ -652,16 +652,16 @@ def main():
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
             dispatcher.bot.send_photo(
-                "@Komisansupport",
-                "https://telegra.ph//file/2c817a1e191b120554f41.jpg",
+                "@kitaxsupport",
+                "https://telegra.ph/file/6ac7223d0a27ffcd3831b.jpg",
                 "I Am Alive Now!",
                 parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="[💝Start Me💝]",
-                             url="https://t.me/KomiXryuBot?start=")
+                             text="[Start Me]",
+                             url="https://t.me/kitaxrobot?start=")
                      ] 
                 ]
             ),  
@@ -710,7 +710,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info(f"KomiXryu_Bot deployed. | BOT: [@KomiXryu_Bot]")
+        LOGGER.info(f"kitaxrobot deployed. | BOT: [@kitaxrobot]")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
